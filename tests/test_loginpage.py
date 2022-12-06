@@ -15,3 +15,4 @@ class TestLoginPage:
         except Exception as msg:
             driver.save_screenshot("screenshot1.png")
             raise msg
+
