@@ -13,5 +13,5 @@ class TestLoginPage:
             lp.click_login()
 
         except Exception as msg:
-            driver.save_screenshot("")
+            driver.save_screenshot("screenshot1.png")
             raise msg
