@@ -26,4 +26,16 @@ jobs:
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Test with pytest
       run: |
-        pytest tests/test_loginpage.py -vs
+        pytest tests/test_loginpage.py -vs --html="report1.html"
+    - name: Commit files
+      run: |
+        git config --local user.email "vidyagowda005@gmail.com"
+        git config --local user.name "vidyagowda159"
+        git add -A
+        git commit -a -m "Add changes"
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+    
