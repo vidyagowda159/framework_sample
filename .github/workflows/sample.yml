@@ -28,12 +28,14 @@ jobs:
       run: |
         pytest tests/test_loginpage.py -vs --html="report1.html"
     - name: Commit files
+      condition: always()
       run: |
         git config --local user.email "vidyagowda005@gmail.com"
         git config --local user.name "vidyagowda159"
         git add -A
         git commit -a -m "Add changes"
     - name: Push changes
+      condition: always()
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
