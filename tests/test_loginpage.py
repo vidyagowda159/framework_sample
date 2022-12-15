@@ -1,5 +1,6 @@
 from src.login_page import LoginPage
 
+
 class TestLoginPage:
 
     def test_valid_credential(self, init_driver):

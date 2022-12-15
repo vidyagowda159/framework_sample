@@ -16,8 +16,7 @@ class LoginPage:
         driver.find_element("name", "pwd").send_keys(password)
 
     def select_checkbox(self):
-        driver.find_element("name", "remember").click()
+        driver.find_element("name.", "remember").click()
 
     def click_login(self):
         driver.find_element("xpath", '//div[text()="Login "]').click()
-
